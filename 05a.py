@@ -7,18 +7,18 @@ import random
 import numpy as np
 
 def accept_prob(S_old, S_new, T):
-    
-    prob = np.exp(-(S_old-S_new)/T)
 
-    if prob > 1:
-        return 1.0
+    if S_new > S_old:
+        prob =  1.0
     else:
-        return prob
+        prob = np.exp(-(S_old-S_new)/T)
+    return prob
 
 # the above function will be used as follows. this is shown just for
 # your information; you don't have to change anything here
 def accept(S_old, S_new, T):
-    if random.random() < accept_prob(S_old, S_new, T):
+    rand = random.random()
+    if rand < accept_prob(S_old, S_new, T):
         print(True)
     else:
         print(False)
