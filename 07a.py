@@ -1,30 +1,18 @@
-import math
-import random
 import numpy as np
-from io import StringIO
-import numpy as np
-
-import random as rand
 
 def generate(p1):
-    seq = ""
-    for i in range (10000):
-        rand_num = random.random()
-        if rand_num < p1:
-            seq += "1"
-        else:
-            seq += "0"
-    print(seq)
+    # change this so that it generates 10000 random zeros and ones
+    # where the probability of one is p1
+    seq = np.random.choice([0, 1], p=[1-p1, p1], size=10000)
     return seq
 
 def count(seq):
-    ct = 0
+    # insert code to return the number of occurrences of 11111 in the sequence
+    n = 0
     for i in range(len(seq)-4):
-        if seq[i:i+5] == "11111":
-            ct += 1
-        else:
-            continue
-    return ct
+        if all(seq[i:i+5]) == 1:
+            n += 1
+    return n 
 
 def main(p1):
     seq = generate(p1)
