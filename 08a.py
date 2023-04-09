@@ -5,7 +5,7 @@ from io import StringIO
 countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
 populations = [5615000, 5439000, 324000, 5080000, 9609000]
 male_fishers = [1822, 2575, 3400, 11291, 1731]
-female_fishers = [69, 77, 400, 320, 26] 
+female_fishers = [69, 77, 400, 320, 26]
 
 def guess(winner_gender):
     all_fishers = 0
@@ -36,3 +36,5 @@ def main():
     print("if the winner is female, my guess is she's from %s; probability %.2f%%" % (country, fraction))
 
 main()
+
+  
